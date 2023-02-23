@@ -45,6 +45,8 @@ Temps d'execution : 694592ns (0.694592ms)
 ----------------
 ```
 
+The encrypted result can be compressed via zlib.
+
 ## Perfomances
 *Each result is the mean of 100 iterations.*
 
