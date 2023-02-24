@@ -3,7 +3,7 @@ This repo shows the performance and capabilities of the script without revealing
 
 <br>
 
-#### Voici un exemple de cryptage
+#### Here is an example of encryption
 ```python
 d_message = "Hello World !"
 
@@ -24,7 +24,7 @@ Temps d'execution : 60135ns (0.060135ms)
 ----------------
 ```
 
-#### Voici un exemple de decryptage
+#### Here is an example of decryption
 ```python
 c_message = "$$\")+@@@1A+j\"m@<g*j`Z@<g*j`Z@3i0=KI $EE2aJa@3i0=KI@Beq>1c@<g*j`Z@#m<g== %iaFF0?"
 
@@ -50,9 +50,9 @@ The encrypted result can be compressed via zlib.
 ## Perfomances
 *Each result is the mean of 100 iterations.*
 
- 🟢: entre 0 ns et 10 000 ns
- 🟠: entre 10 001 ns et 50 000 ns
- 🔴: entre 50 001 ns et 100 000 ns
+ 🟢: between 0 ns and 10 000 ns
+ 🟠: between 10 001 ns and 50 000 ns
+ 🔴: over 50,001 ns
 
 <br>
 
