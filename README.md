@@ -1,5 +1,5 @@
 # KronosCrypt-Public
-This repo shows the performance of the script without revealing the code.
+This repo shows the performance and capabilities of the script without revealing the code.
 
 <br>
 
