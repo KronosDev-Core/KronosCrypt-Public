@@ -65,7 +65,7 @@ The encrypted result can be compressed via zlib.
 | encryption v1 | 🟠 52 418 ns | 
 | encryption v2 | 🟢 41 080 ns |
 | decryption v1 | 🔴 872 269 ns | 
-| decryption v2 | 🟢 669 097 ns |
+| decryption v2 | 🔴 669 097 ns |
 
 <br>
 
@@ -85,5 +85,5 @@ Suspendisse potenti. Nam at neque quis dui bibendum mollis. Fusce venenatis nunc
 
 | fn | time |
 |----------|:-------------:|
-| encryption v2 | 143 836 ns |
-| decryption v2 | 1 141 569 ns |
+| encryption v2 | 🔴 438 912 ns |
+| decryption v2 | 🔴 4 262 822 ns |
