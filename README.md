@@ -16,6 +16,7 @@ print(crypt.getEncryption())
 print(f"{Fore.GREEN}Temps d'execution : {crypt.getDuration()}ns ({crypt.getDuration()/1e+6}ms){Fore.RESET}")
 print('----------------')
 ```
+
 ```text
 ----------------
 - - q.0.?.~ - -
@@ -25,6 +26,7 @@ Temps d'execution : 60135ns (0.060135ms)
 ```
 
 #### Here is an example of decryption
+
 ```python
 c_message = "$$\")+@@@1A+j\"m@<g*j`Z@<g*j`Z@3i0=KI $EE2aJa@3i0=KI@Beq>1c@<g*j`Z@#m<g== %iaFF0?"
 
@@ -37,6 +39,7 @@ print(crypt.getDecryption())
 print(f"{Fore.GREEN}Temps d'execution : {crypt.getDuration()}ns ({crypt.getDuration()/1e+6}ms){Fore.RESET}")
 print('----------------')
 ```
+
 ```text
 ----------------
 - - q.0.?.~ - -
@@ -48,11 +51,9 @@ Temps d'execution : 694592ns (0.694592ms)
 The encrypted result can be compressed via zlib.
 
 ## Perfomances
-*Each result is the mean of 100 iterations.*
-
- 🟢: between 0 ns and 10 000 ns
- 🟠: between 10 001 ns and 50 000 ns
- 🔴: over 50,001 ns
+> *Each result is the mean of 100 iterations.*
+> 
+> 🟢: between 0 ns and 10 000 ns, 🟠: between 10 001 ns and 50 000 ns, 🔴: over 50 001 ns
 
 <br>
 
@@ -60,12 +61,19 @@ The encrypted result can be compressed via zlib.
 "Hello World!"
 ```
 
-| fn | time |
-|----------|:-------------:|
-| encryption v1 | 🟠 52 418 ns | 
-| encryption v2 | 🟢 41 080 ns |
-| decryption v1 | 🔴 872 269 ns | 
-| decryption v2 | 🔴 669 097 ns |
+| fn                                                      |     time     |
+| ------------------------------------------------------- | :----------: |
+| encryption v1                                           | 🔴 52 418 ns  |
+| encryption v2 + cache                                   | 🟠 41 080 ns  |
+| encryption v2.1                                         | 🟠 35 393 ns  |
+| encryption v2.1 + cache                                 | 🟢  2 609 ns  |
+| encryption v2.1 + cache (cache flush at each iteration) | 🟠 27 546 ns  |
+|                                                         |              |
+| decryption v1                                           | 🔴 872 269 ns |
+| decryption v2 + cache                                   | 🟠 16 567 ns  |
+| decryption v2.1                                         | 🔴 372 245 ns |
+| decryption v2.1 + cache                                 | 🟠 12 767 ns  |
+| decryption v2.1 + cache (cache flush at each iteration) | 🟠 13 977 ns  |
 
 <br>
 
@@ -81,9 +89,20 @@ Nunc ultrices metus a fringilla euismod. Phasellus at tempor nisi, eu blandit ve
 Suspendisse potenti. Nam at neque quis dui bibendum mollis. Fusce venenatis nunc vel tempor dignissim. Cras efficitur diam condimentum accumsan hendrerit. Nunc vestibulum vel augue quis tristique. In tincidunt sagittis urna vel ullamcorper. Donec tristique ex mollis, tincidunt lacus eget, pharetra sapien."""
 ```
 
-*encryption and decryption v1, not support `\n or \t`*
+> *encryption and decryption v1, not support `\n or \t`*
+> 
+> 🟢: between 0 ns and 250 000 ns, 🟠: between 250 001 ns and 1 000 000 ns, 🔴: over 1 000 001 ns
 
-| fn | time |
-|----------|:-------------:|
-| encryption v2 | 🔴 438 912 ns |
-| decryption v2 | 🔴 4 262 822 ns |
+<br>
+
+| fn                                                      |      time       |
+| ------------------------------------------------------- | :-------------: |
+| encryption v2 + cache                                   | 🟠   300 583 ns  |
+| encryption v2.1                                         | 🔴 5 030 673 ns  |
+| encryption v2.1 + cache                                 | 🟢   220 408 ns  |
+| encryption v2.1 + cache (cache flush at each iteration) | 🟠   322 574 ns  |
+|                                                         |                 |
+| decryption v2 + cache                                   | 🔴 1 481 509 ns  |
+| decryption v2.1                                         | 🔴 63 397 358 ns |
+| decryption v2.1 + cache                                 | 🔴 1 399 248 ns  |
+| decryption v2.1 + cache (cache flush at each iteration) | 🔴 1 498 498 ns  |
