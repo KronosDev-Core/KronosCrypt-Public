@@ -3,7 +3,7 @@ This repo shows the performance and capabilities of the script without revealing
 
 <br>
 
-#### Here is an example of encryption
+#### Here is an example of encryption (KronosCrypt <V2.0)
 ```python
 d_message = "Hello World !"
 
@@ -47,8 +47,32 @@ Hello World !       <-- le message decrypter
 Temps d'execution : 694592ns (0.694592ms)
 ----------------
 ```
-
 The encrypted result can be compressed via zlib.
+
+#### Here is an full example of KronosCrypt V>=2.0
+```text
+ - - f.W.?.~ - -
+
+ ----------[Encryption]----------
+
+$lJh7y$  @{!HTFE  @lM`f>f  @lM`f>f  @P]3Q+4   $)v/c2_  @P]3Q+4  @2??D.4  @lM`f>f  @lN7WZZ  %OQ1@'4
+Temps d'execution : 427600ns (0.4276ms)
+
+ ----------[Compression]----------
+
+({'$lJh7y$  ': [0], '@{!HTFE  ': [1], '@lM`f>f  ': [2, 3, 9], '@P]3Q+4  ': [4, 7], ' ': [5], '$)v/c2_  ': [6], '@2??D.4  ': [8], '@lN7WZZ  ': [10], "%OQ1@'4  ": [11]}, 12)
+Temps d'execution : 137400ns (0.1374ms)
+
+ ----------[Decompression]----------
+
+$lJh7y$  @{!HTFE  @lM`f>f  @lM`f>f  @P]3Q+4   $)v/c2_  @P]3Q+4  @2??D.4  @lM`f>f  @lN7WZZ  %OQ1@'4
+Temps d'execution : 104900ns (0.1049ms)
+
+ ----------[Decryption]----------
+
+Hello World!
+Temps d'execution : 1404400ns (1.4044ms)
+```
 
 ## Perfomances
 > *Each result is the mean of 100 iterations.*
@@ -68,12 +92,18 @@ The encrypted result can be compressed via zlib.
 | encryption v2.1                                         | 🟠 35 393 ns  |
 | encryption v2.1 + cache                                 | 🟢  2 609 ns  |
 | encryption v2.1 + cache (cache flush at each iteration) | 🟠 27 546 ns  |
-|                                                         |              |
+| encryption v2.2                                         | 🟠 12 253 ns  |
+|                                                         |                |
 | decryption v1                                           | 🔴 872 269 ns |
 | decryption v2 + cache                                   | 🟠 16 567 ns  |
 | decryption v2.1                                         | 🔴 372 245 ns |
 | decryption v2.1 + cache                                 | 🟠 12 767 ns  |
 | decryption v2.1 + cache (cache flush at each iteration) | 🟠 13 977 ns  |
+| decryption v2.2                                         | 🟠 31 989 ns  |
+|                                                         |                |
+| compression v2.2                                        | 🟠 21 822 ns  |
+|                                                         |                |
+| decrompression v2.2                                     | 🟢 6 248 ns  |
 
 <br>
 
@@ -101,8 +131,14 @@ Suspendisse potenti. Nam at neque quis dui bibendum mollis. Fusce venenatis nunc
 | encryption v2.1                                         | 🔴 5 030 673 ns  |
 | encryption v2.1 + cache                                 | 🟢   220 408 ns  |
 | encryption v2.1 + cache (cache flush at each iteration) | 🟠   322 574 ns  |
+| encryption v2.2                                         | 🟠   665 309 ns  |
 |                                                         |                 |
 | decryption v2 + cache                                   | 🔴 1 481 509 ns  |
 | decryption v2.1                                         | 🔴 63 397 358 ns |
 | decryption v2.1 + cache                                 | 🔴 1 399 248 ns  |
 | decryption v2.1 + cache (cache flush at each iteration) | 🔴 1 498 498 ns  |
+| decryption v2.2                                         | 🔴 1 952 431 ns  |
+|                                                         |                |
+| compression v2.2                                        | 🔴 1 596 746 ns  |
+|                                                         |                |
+| decrompression v2.2                                     | 🟢 79 881 ns  |
