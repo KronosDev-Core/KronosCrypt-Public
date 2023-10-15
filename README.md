@@ -93,6 +93,7 @@ Temps d'execution : 1404400ns (1.4044ms)
 | encryption v2.1 + cache                                 | 🟢  2 609 ns  |
 | encryption v2.1 + cache (cache flush at each iteration) | 🟠 27 546 ns  |
 | encryption v2.2                                         | 🟠 12 253 ns  |
+| encryption v2.4                                         | 🟢 4 115 ns  |
 |                                                         |                |
 | decryption v1                                           | 🔴 872 269 ns |
 | decryption v2 + cache                                   | 🟠 16 567 ns  |
@@ -100,10 +101,13 @@ Temps d'execution : 1404400ns (1.4044ms)
 | decryption v2.1 + cache                                 | 🟠 12 767 ns  |
 | decryption v2.1 + cache (cache flush at each iteration) | 🟠 13 977 ns  |
 | decryption v2.2                                         | 🟠 31 989 ns  |
+| decryption v2.4                                         | 🟠 18 727 ns  |
 |                                                         |                |
 | compression v2.2                                        | 🟠 21 822 ns  |
+| compression v2.4                                        | 🟢 8 545 ns  |
 |                                                         |                |
 | decrompression v2.2                                     | 🟢 6 248 ns  |
+| decrompression v2.4                                     | 🟢 2 903 ns  |
 
 <br>
 
@@ -132,13 +136,17 @@ Suspendisse potenti. Nam at neque quis dui bibendum mollis. Fusce venenatis nunc
 | encryption v2.1 + cache                                 | 🟢   220 408 ns  |
 | encryption v2.1 + cache (cache flush at each iteration) | 🟠   322 574 ns  |
 | encryption v2.2                                         | 🟠   665 309 ns  |
+| encryption v2.4                                         | 🟢   185 279 ns  |
 |                                                         |                 |
 | decryption v2 + cache                                   | 🔴 1 481 509 ns  |
 | decryption v2.1                                         | 🔴 63 397 358 ns |
 | decryption v2.1 + cache                                 | 🔴 1 399 248 ns  |
 | decryption v2.1 + cache (cache flush at each iteration) | 🔴 1 498 498 ns  |
 | decryption v2.2                                         | 🔴 1 952 431 ns  |
+| decryption v2.4                                         | 🟠 891 105 ns  |
 |                                                         |                |
 | compression v2.2                                        | 🔴 1 596 746 ns  |
+| compression v2.4                                        | 🟠 765 359 ns  |
 |                                                         |                |
 | decrompression v2.2                                     | 🟢 79 881 ns  |
+| decrompression v2.4                                     | 🟢 45 274 ns  |
